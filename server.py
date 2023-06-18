@@ -40,6 +40,12 @@ def edit(id):
     users = Users.get_one({ "id" : id })
     return render_template("edit_user.html", users = users)
 
+@app.route('/users/update', methods=['POST'])
+def update():
+    Users.update(request.form)
+    return redirect ('/users')
+
+
 # @app.route(data)
 # def delete():
 

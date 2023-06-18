@@ -19,7 +19,7 @@
 </head>
 <body>
     <a href="/">Home</a>
-    <form action='/users/edit/<int:id>'>
+    <form action='/users/edit/<int:id>' class="col-6 mx-auto">
             <h1 class="display-4 text-center" >Edit {{users.first_name}}'s Information</h1>
             <div class="form-group">
                 <label for="first-name">First Name:</label>
@@ -33,7 +33,7 @@
                 <label for="email">Email:</label>
                 <input type="text" name="email" class="form-control" value="{{users.email}}" placeholder="{{users.email}}">
             </div>
-            <input class="btn btn-primary" type="submit" value="Update">
+            <a href="/users/update" class="btn btn-warning">Update</a>
     </form>
 
     

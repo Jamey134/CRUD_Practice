@@ -49,7 +49,7 @@ class Users:
     @classmethod   #<------- UPDATE
     def update(cls, data):
         query = """
-            UPDATE users INTO first_name=%(first_name)s last_name=%(last_name)s email=%(email)s updated_at=NOW()
+            UPDATE users SET first_name=%(first_name)s last_name=%(last_name)s email=%(email)s updated_at=NOW()
             WHERE id = %(id)s
                 """
         results = connectToMySQL('users_schema').query_db(query, data)
