@@ -8,7 +8,7 @@ app.secret_key = "TOPSECRET"
 
 @app.route('/')
 def newUsers():
-    return redirect ('/users/new')
+    return redirect ('/users')
 
 
 @app.route('/users')
@@ -45,11 +45,11 @@ def update():
     Users.update(request.form)
     return redirect ('/users')
 
-# @app.rouge("/users/show/<int:id>")
-# def show(id):
-#     print('showUser')
-#     users = Users.get_one({ "id" : id })
-#     return redirect ('/users')
+@app.route("/users/show/<int:id>")
+def show(id):
+    print('showUser')
+    users = Users.get_one({ "id" : id })
+    return render_template ('show_user.html', users = users)
 
 
 
@@ -57,6 +57,7 @@ def update():
 def delete(id):
     users = Users.delete({ "id" : id })
     return redirect ('/users')
+
 
 
 

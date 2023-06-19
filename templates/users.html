@@ -27,6 +27,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th>ID:</th>
                 <th>First Name:</th>
                 <th>Last Name:</th>
                 <th>Email:</th>
@@ -37,6 +38,7 @@
         <tbody>
             {% for user in users %}
             <tr>
+                <td>{{user.id}}</td>
                 <td>{{user.first_name}}</td>
                 <td>{{user.last_name}} </td>
                 <td>{{user.email}} </td>
@@ -55,7 +57,8 @@
             {%endfor%}
         </tbody>
     </table>
-    <a href="/" class="btn btn-warning">Go Back</a>
+    <a href="/users/new" class="btn btn-warning">Add New User</a>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

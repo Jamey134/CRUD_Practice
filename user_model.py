@@ -68,4 +68,6 @@ class Users:
     
     @classmethod    #<---- SHOW USERS
     def show(cls, data):
-        query
+        query = """ 
+        SELECT * FROM users
+        """
