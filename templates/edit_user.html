@@ -19,8 +19,9 @@
 </head>
 <body>
     <a href="/">Home</a>
-    <form action='/users/edit/<int:id>' class="col-6 mx-auto">
-            <h1 class="display-4 text-center" >Edit {{users.first_name}}'s Information</h1>
+    <form action='/users/update' method="POST" class="col-6 mx-auto">
+        <input type="hidden" name = "id" value="{{users.id}}">
+            <h1 class="display-4 text-center">Edit {{users.first_name}}'s Information</h1>
             <div class="form-group">
                 <label for="first-name">First Name:</label>
                 <input type="text" name="first_name" class="form-control" value="{{users.first_name}}" placeholder="{{users.first_name}}">
@@ -33,7 +34,7 @@
                 <label for="email">Email:</label>
                 <input type="text" name="email" class="form-control" value="{{users.email}}" placeholder="{{users.email}}">
             </div>
-            <a href="/users/update" class="btn btn-warning">Update</a>
+            <input class="btn btn-primary" type="submit" value="Update">
     </form>
 
     

@@ -45,9 +45,19 @@ def update():
     Users.update(request.form)
     return redirect ('/users')
 
+# @app.rouge("/users/show/<int:id>")
+# def show(id):
+#     print('showUser')
+#     users = Users.get_one({ "id" : id })
+#     return redirect ('/users')
 
-# @app.route(data)
-# def delete():
+
+
+@app.route("/users/delete/<int:id>")
+def delete(id):
+    users = Users.delete({ "id" : id })
+    return redirect ('/users')
+
 
 
 
